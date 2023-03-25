@@ -102,6 +102,7 @@ def subscribe_socket(ws):
     client = queue.Queue()
     clients.append(client)
     g = gevent.spawn(read_ws, ws, client)
+    print("Websocket opened!")
     try:
         while True:
             msg = client.get()
