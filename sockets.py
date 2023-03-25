@@ -131,6 +131,7 @@ def flask_post_json():
 def update(entity):
     '''update the entities via this interface'''
     json_data = flask_post_json()
+    print(json_data)
     for key in json_data:
         myWorld.update(entity, key, json_data[key])
     return myWorld.get(entity)
