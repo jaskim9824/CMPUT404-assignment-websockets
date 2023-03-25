@@ -75,7 +75,7 @@ def set_listener( entity, data ):
         sentDict = {}
         sentDict[entity] = data
         print(sentDict)
-        client.put_nowait(sentDict)
+        client.put_nowait(json.dumps(sentDict))
 
 myWorld.add_set_listener( set_listener )
         
