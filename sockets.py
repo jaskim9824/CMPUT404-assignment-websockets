@@ -74,6 +74,7 @@ def set_listener( entity, data ):
     for client in clients:
         sentDict = {}
         sentDict[entity] = data
+        print(sentDict)
         client.put_nowait(sentDict)
 
 myWorld.add_set_listener( set_listener )
@@ -108,6 +109,7 @@ def subscribe_socket(ws):
     try:
         while True:
             msg = client.get()
+            print(msg)
             ws.send(msg)
     except Exception as e:
         # WebSocketError as e:
