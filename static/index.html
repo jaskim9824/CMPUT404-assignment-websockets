@@ -269,6 +269,7 @@ function wsSetup() {
             // debug("WebSocket Recv:" + msg.data);
             // XXX: TODO What are you going to do here?
             // https://www.javascripttutorial.net/object/javascript-merge-objects/
+            console.log(msg);
             let obj = JSON.parse(msg.data);       
             world = {...world, ...obj};
         } catch (e) {
