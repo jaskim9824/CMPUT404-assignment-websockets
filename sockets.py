@@ -69,7 +69,6 @@ myWorld = World()
 
 def set_listener( entity, data ):
     ''' do something with the update ! '''
-    print(data)
     for client in clients:
         sentDict = {}
         sentDict[entity] = data
