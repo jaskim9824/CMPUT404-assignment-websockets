@@ -104,13 +104,13 @@ def subscribe_socket(ws):
     g = gevent.spawn(read_ws, ws, client)
     try:
         while True:
-            msg = queue.get()
+            msg = client.get()
             ws.send(msg)
     except Exception as e:
         # WebSocketError as e:
         print("WS Error %s" % e)
     finally:
-        clients.remove(queue)
+        clients.remove(client)
         gevent.kill(g)
 
 
