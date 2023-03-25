@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="license" content="
         Copyright 2013 Google, Abram Hindle
+        Copyright 2023 Google, Jason Kim
         
         Licensed under the Apache License, Version 2.0 (the "License");
         you may not use this file except in compliance with the License.
@@ -125,6 +126,11 @@ function addEntity(entity, data) {
     world[entity] = data;
     drawNextFrame(); // (but should we?)
     //XXX: Send a XHTML Request that updates the entity you just modified!
+    var request = new XMLHttpRequest();
+    request.open("POST", "http://"+host+"/entity/"+entity);
+    request.setRequestHeader("Content-Type", "application/json");
+    request.setRequestHeader("Accept", "application/json");
+    request.send(JSON.stringify(data));
 }
 var counter = 0;
 function addEntityWithoutName(data) {
@@ -269,7 +275,6 @@ function wsSetup() {
 }
 
 wsSetup();
-
 
 
 
