@@ -99,9 +99,9 @@ def subscribe_socket(ws):
     '''Fufill the websocket URL of /subscribe, every update notify the
        websocket and read updates from the websocket '''
     # XXX: TODO IMPLEMENT ME
-    queue = queue.Queue()
-    clients.append(queue)
-    g = gevent.spawn(read_ws, ws, queue)
+    client = queue.Queue()
+    clients.append(client)
+    g = gevent.spawn(read_ws, ws, client)
     try:
         while True:
             msg = queue.get()
