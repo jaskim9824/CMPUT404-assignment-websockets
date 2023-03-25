@@ -266,7 +266,7 @@ function wsSetup() {
     };
     socket.onmessage = function(msg) {  
         try {
-            debug("WebSocket Recv:" + msg.data);
+            // debug("WebSocket Recv:" + msg.data);
             // XXX: TODO What are you going to do here?
             // https://www.javascripttutorial.net/object/javascript-merge-objects/
             let obj = JSON.parse(msg.data);       
