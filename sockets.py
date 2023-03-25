@@ -72,7 +72,7 @@ def set_listener( entity, data ):
     for client in clients:
         sentDict = {}
         sentDict[entity] = data
-        client.put(sentDict)
+        client.put_nowait(sentDict)
 
 myWorld.add_set_listener( set_listener )
         
@@ -86,10 +86,13 @@ def read_ws(ws,client):
     # XXX: TODO IMPLEMENT ME
     while True:
         msg = ws.receive()
-        for entity in msg:
-            for key in msg[entity]:
-                myWorld.update(entity, key, msg[entity][key])
-    return None
+        if msg is not None:
+            for entity in msg:
+                for key in msg[entity]:
+                    myWorld.update(entity, key, msg[entity][key])
+        else:
+            break
+    
 
 @sockets.route('/subscribe')
 def subscribe_socket(ws):
