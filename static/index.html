@@ -249,12 +249,12 @@ mouse.mousedowners.push(function(x,y,clicked,e) {
 });
 
 mouse.mouseuppers.push(function(x,y,clicked,e) {
-    addEntityWithoutName({'x':x,'y':y,'colour':'white', radius:30});
-    addEntityWithoutName({'x':x-8,'y':y+34,'colour':'orange', radius:30});
-    addEntityWithoutName({'x':x+8,'y':y+34,'colour':'orange', radius:30});
-    addEntityWithoutName({'x':x+16,'y':y-30,'colour':'orange', radius:30});
+    addEntityWithoutName({'x':x,'y':y-15,'colour':'white', radius:30});
+    addEntityWithoutName({'x':x-8,'y':y,'colour':'orange', radius:30});
+    addEntityWithoutName({'x':x+8,'y':y,'colour':'orange', radius:30});
+    addEntityWithoutName({'x':x+32,'y':y-30,'colour':'orange', radius:30});
     addEntityWithoutName({'x':x,'y':y-30,'colour':'orange', radius:30});
-    addEntityWithoutName({'x':x-16,'y':y-30,'colour':'orange', radius:30});
+    addEntityWithoutName({'x':x-32,'y':y-30,'colour':'orange', radius:30});
 });
 
 mouse.mousedraggers.push(function(x,y,clicked,e) {
