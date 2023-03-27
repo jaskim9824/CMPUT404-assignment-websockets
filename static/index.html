@@ -249,7 +249,9 @@ mouse.mousedowners.push(function(x,y,clicked,e) {
 });
 
 mouse.mouseuppers.push(function(x,y,clicked,e) {
-    addEntityWithoutName({'x':x,'y':y,'colour':'blue'});
+    addEntityWithoutName({'x':x,'y':y,'colour':'white', radius:20});
+    addEntityWithoutName({'x':x,'y':y,'colour':'yellow', radius:30});
+    addEntityWithoutName({'x':x,'y':y,'colour':'orange', radius:50});
 });
 
 mouse.mousedraggers.push(function(x,y,clicked,e) {
