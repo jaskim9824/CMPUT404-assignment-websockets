@@ -86,13 +86,12 @@ def read_ws(ws,client):
     # XXX: TODO IMPLEMENT ME
     while True:
         msg = ws.receive()
-        print(msg)
+        print("message recv: " + str(msg))
         if msg is not None:
             for entity in msg:
                 for key in msg[entity]:
                     myWorld.update(entity, key, msg[entity][key])
         else:
-            print("here")
             break
     
 
@@ -109,7 +108,7 @@ def subscribe_socket(ws):
     try:
         while True:
             msg = client.get()
-            print(msg)
+            print("Message sent: " + msg)
             ws.send(msg)
     except Exception as e:
         # WebSocketError as e:
