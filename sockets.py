@@ -92,6 +92,7 @@ def read_ws(ws,client):
                 for key in msg[entity]:
                     myWorld.update(entity, key, msg[entity][key])
         else:
+            print("here")
             break
     
 
