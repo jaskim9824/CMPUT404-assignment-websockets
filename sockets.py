@@ -86,10 +86,12 @@ def read_ws(ws,client):
     # XXX: TODO IMPLEMENT ME
     while True:
         msg = ws.receive()
+        msgDict = json.loads(msg)
         print("message recv: " + str(msg))
         if msg is not None:
-            for entity in msg:
-                for key in msg[entity]:
+            for entity in msgDict:
+                print(entity)
+                for key in msgDict[entity]:
                     myWorld.update(entity, key, msg[entity][key])
         else:
             break
