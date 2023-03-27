@@ -240,8 +240,13 @@ mouse.mousedowners.push(function(x,y,clicked,e) {
     addEntityWithoutName({'x':x,'y':y,'colour':'blue'});
 });
 
+var colour_rot = 0;
+colour_array = ['orange', 'yellow', 'white']
+
 mouse.mouseuppers.push(function(x,y,clicked,e) {
-    addEntityWithoutName({'x':x,'y':y,'colour':'red'});
+    addEntityWithoutName({'x':x,'y':y,'colour':colour_array[colour_rot]});
+    colour_rot++;
+    colour_rot = colour_rot % 3;
 });
 
 mouse.mousedraggers.push(function(x,y,clicked,e) {
