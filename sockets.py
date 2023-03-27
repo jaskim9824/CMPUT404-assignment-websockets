@@ -85,9 +85,9 @@ def read_ws(ws,client):
     while True:
         msg = ws.receive()
         msgDict = json.loads(msg)
-        print(type(msg))
-        print("message recv: " + str(msg))
-        print(type(msgDict))
+        # print(type(msg))
+        # print("message recv: " + str(msg))
+        # print(type(msgDict))
         if msg is not None:
             for entity in msgDict:
                 print(entity)
@@ -110,7 +110,7 @@ def subscribe_socket(ws):
     try:
         while True:
             msg = client.get()
-            print("Message sent: " + msg)
+            # print("Message sent: " + msg)
             ws.send(msg)
     except Exception as e:
         # WebSocketError as e:
