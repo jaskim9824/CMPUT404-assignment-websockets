@@ -87,7 +87,9 @@ def read_ws(ws,client):
     while True:
         msg = ws.receive()
         msgDict = json.loads(msg)
+        print(type(msg))
         print("message recv: " + str(msg))
+        print(type(msgDict))
         if msg is not None:
             for entity in msgDict:
                 print(entity)
