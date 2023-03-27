@@ -272,6 +272,7 @@ function wsSetup() {
             let obj = JSON.parse(msg.data);    
             console.log(obj);   
             world = {...world, ...obj};
+            drawNextFrame();
         } catch (e) {
             alert("socket on message: " + e);
         }
