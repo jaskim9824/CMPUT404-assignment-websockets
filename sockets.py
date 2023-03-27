@@ -87,14 +87,9 @@ def read_ws(ws,client):
     while True:
         msg = ws.receive()
         msgDict = json.loads(msg)
-        # print(type(msg))
-        # print("message recv: " + str(msg))
-        # print(type(msgDict))
         if msg is not None:
             for entity in msgDict:
-                # print(entity)
-                for key in msgDict[entity]:
-                    myWorld.update(entity, key, msgDict[entity][key])
+                myWorld.set(entity, msgDict[entity])
         else:
             break
     
