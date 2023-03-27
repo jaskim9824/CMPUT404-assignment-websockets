@@ -70,7 +70,9 @@ myWorld = World()
 def set_listener( entity, data ):
     ''' do something with the update ! '''
     for client in clients:
-        client.put_nowait(json.dumps(myWorld.world()))
+        sentDict = {}
+        sentDict[entity] = data
+        client.put_nowait(json.dumps(sentDict))
 
 myWorld.add_set_listener( set_listener )
         
@@ -110,7 +112,7 @@ def subscribe_socket(ws):
     try:
         while True:
             msg = client.get()
-            # print("Message sent: " + msg)
+            print("Message sent: " + msg)
             ws.send(msg)
     except Exception as e:
         # WebSocketError as e:
@@ -136,8 +138,7 @@ def flask_post_json():
 def update(entity):
     '''update the entities via this interface'''
     json_data = flask_post_json()
-    for key in json_data:
-        myWorld.update(entity, key, json_data[key])
+    myWorld.set(entity, json_data)
     return myWorld.get(entity)
 
 @app.route("/world", methods=['POST','GET'])    
