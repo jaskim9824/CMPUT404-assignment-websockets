@@ -94,7 +94,7 @@ def read_ws(ws,client):
             for entity in msgDict:
                 print(entity)
                 for key in msgDict[entity]:
-                    myWorld.update(entity, key, msg[entity][key])
+                    myWorld.update(entity, key, msgDict[entity][key])
         else:
             break
     
