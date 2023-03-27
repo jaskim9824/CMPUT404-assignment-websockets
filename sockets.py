@@ -90,7 +90,7 @@ def read_ws(ws,client):
         # print(type(msgDict))
         if msg is not None:
             for entity in msgDict:
-                print(entity)
+                # print(entity)
                 for key in msgDict[entity]:
                     myWorld.update(entity, key, msgDict[entity][key])
         else:
