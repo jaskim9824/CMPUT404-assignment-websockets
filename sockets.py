@@ -86,6 +86,7 @@ def read_ws(ws,client):
     # XXX: TODO IMPLEMENT ME
     while True:
         msg = ws.receive()
+        print(msg)
         if msg is not None:
             for entity in msg:
                 for key in msg[entity]:
@@ -133,7 +134,6 @@ def flask_post_json():
 def update(entity):
     '''update the entities via this interface'''
     json_data = flask_post_json()
-    print(json_data)
     for key in json_data:
         myWorld.update(entity, key, json_data[key])
     return myWorld.get(entity)
@@ -154,7 +154,6 @@ def clear():
     '''Clear the world out!'''
     myWorld.clear()
     return myWorld.world()
-
 
 
 if __name__ == "__main__":
