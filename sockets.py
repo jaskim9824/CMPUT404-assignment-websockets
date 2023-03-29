@@ -15,8 +15,13 @@
 # limitations under the License.
 #
 # Sources:
-# Abram Hindle
-# https://github.com/uofa-cmput404/cmput404-slides/blob/master/examples/WebSocketsExamples/chat.py
+# Title: Chat websocket example
+# Name: Abram Hindle
+# URL: https://github.com/uofa-cmput404/cmput404-slides/blob/master/examples/WebSocketsExamples/chat.py
+#
+# Title: Broadcaster websocket example
+# Name: Abram Hindle
+# URL: https://github.com/uofa-cmput404/cmput404-slides/blob/master/examples/WebSocketsExamples/broadcaster.py
 
 import flask
 from flask import Flask, request
@@ -107,7 +112,6 @@ def subscribe_socket(ws):
     try:
         while True:
             msg = client.get()
-            print("Message sent: " + msg)
             ws.send(msg)
     except Exception as e:
         # WebSocketError as e:

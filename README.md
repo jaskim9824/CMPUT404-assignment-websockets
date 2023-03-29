@@ -27,6 +27,7 @@ freetests.py is LICENSE'D under a BSD-like license:
 From ws4py
 
 Copyright (c) 2011-2014, Sylvain Hellegouarch, Abram Hindle
+Copyright (c) 2023 Jason Kim
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -59,3 +60,17 @@ Contributors
 * Mark Galloway
 * Abram Hindle
 * Cole Mackenzie
+
+Sources
+=========
+Title: Chat websocket example
+Name: Abram Hindle
+URL: https://github.com/uofa-cmput404/cmput404-slides/blob/master/examples/WebSocketsExamples/chat.py
+
+Title: Broadcaster websocket example
+Name: Abram Hindle
+URL: https://github.com/uofa-cmput404/cmput404-slides/blob/master/examples/WebSocketsExamples/broadcaster.py
+
+Title: JavaScript Merge Objects
+Website: Javascript Tutorial
+URL: https://www.javascripttutorial.net/object/javascript-merge-objects/
